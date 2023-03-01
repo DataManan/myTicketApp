@@ -1,8 +1,19 @@
 from cgitb import html
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+import os
 
 
-app = Flask(__name__)
+current_dir = os.path.abspath(os.path.dirname(__file__))
+app = Flask(__name__, template_folder="templates")
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
+    current_dir, "myticketDB.sqlite3"
+)
+
+db = SQLAlchemy()
+db.init_app(app)
+app.app_context().push()
+# app = Flask(__name__)
 movies = [
     {
         "show_id": "kgf2021",
@@ -50,7 +61,8 @@ def home():
 
 @app.route("/book_tickets/<show_id>")
 def book_tickets(show_id):
-    return render_template("show.html.jinja2", SHOWS=movies)
+
+    return render_template("show.html.jinja2", SHOWS=movies, show_id=show_id)
 
 
 if __name__ == "__main__":

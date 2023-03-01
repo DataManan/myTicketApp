@@ -8,6 +8,7 @@ Jinja2==3.1.2
 jyserver==0.0.5
 MarkupSafe==2.1.2
 pycodestyle==2.10.0
+python-dotenv==1.0.0
 SQLAlchemy==2.0.4
 tomli==2.0.1
 typing_extensions==4.5.0
