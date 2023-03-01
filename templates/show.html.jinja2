@@ -8,7 +8,9 @@
 </head>
 <body>
     <h1 class="display-1">
-        Ticket page !
+        {% for show in SHOWS %}
+        {% include "movies.html.jinja2" %}
+        {% endfor %}
     </h1>
 </body>
 </html>

@@ -30,11 +30,12 @@ General
     /* root */
     :root{
         font-family: 'PT Sans', sans-serif;
-        --clr-primary-5 : rgba(242, 242, 242, 1);
-        --clr-primary-4 : rgba(242, 87, 87, 1);
-        --clr-primary-3 : rgba(3, 15, 38, 1);
-        --clr-primary-2 : rgba(115, 39, 67, 1);
-        --clr-primary-1 : rgba(217, 50, 80, 1);
+        --clr-primary-5 : #f2f2f2;
+        --clr-primary-4 : #f25757;
+        --clr-primary-3 : #030f26;
+        --clr-primary-2 : #732743;
+        --clr-primary-1 : #d93250;
+        --clr-sec-1 : #FF3D3D;
 
         /* font weights */
         --w-light : 300;
@@ -114,7 +115,7 @@ Movies
             border: none;
         }
         .movies__btn:hover{
-            background: var(--clr-primary-2);
+            background: var(--clr-sec-1);
             box-shadow: -5px 5px 50px 5px rgba(243, 243, 243, 0.4);
         }
 
