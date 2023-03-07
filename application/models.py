@@ -1,9 +1,12 @@
-import sqlite3
-from sqlalchemy import create_engine, text
-from flask_sqlalchemy import SQLAlchemy
-from flask import Flask
+# from enum import unique
+from .database import db
 
-
-app = Flask(__name__, template_folder="templates")
-
-
+class Shows(db.Model):
+    tablename = 'shows'
+    show_id = db.Column(db.String, unique=True, primary_key=True)
+    show_name = db.Column(db.String, unique=True, nullable=False)
+    release_date = db.Column(db.Integer, nullable=False)
+    rating = db.Column(db.Numeric(precision=2, scale=1))
+    tags = db.Column(db.String)
+    show_description = db.Column(db.String)
+    cast = db.Column(db.String)
